@@ -10,10 +10,10 @@ jobs:
       - image: cimg/node:16.11.1
     steps:
       - checkout
-      - run: 
+      - run:
           name: Install Packages
-          command: npm install
+          command: yarn install
 
       - run:
           name: Run app
-          command: npm run test
+          command: yarn test
