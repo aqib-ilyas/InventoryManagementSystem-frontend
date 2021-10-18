@@ -1,0 +1,19 @@
+version: 2.1
+workflows:
+  test-flow:
+    jobs:
+      - test
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:16.11.1
+    steps:
+      - checkout
+      - run: 
+          name: Install Packages
+          command: npm install
+
+      - run:
+          name: Run app
+          command: npm run test
